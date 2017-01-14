@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ZSTsnmp</string>
+    <string name="edit_message">Wpisz wiadomość</string>
+    <string name="button_send">Wyślij</string>
+    <string name="sysUpTime">sysUpTime</string>
+    
+    <string name="sysUpTimeOID">OID = .1.3.6.1.2.1.1.3.0</string>
+    <string name="sysUpTimeDescription">Descritpion: The time (in hundredths of a second) since the
+network management portion of the system was last
+re-initialized.</string>
+</resources>
