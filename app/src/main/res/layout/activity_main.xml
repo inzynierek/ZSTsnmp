@@ -8,9 +8,21 @@
 
     <TextView
         android:id="@+id/sysUpTime"
-        android:layout_width="wrap_content"
+        android:background="#1f000000"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sysUpTime"
+        android:textSize="25sp"
+        android:onClick="displayDetail"
+        android:clickable="true"
+        />
+
+    <TextView
+        android:id="@+id/sysContact"
+        android:background="#d74424"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sysContact"
         android:textSize="25sp"
         android:onClick="displayDetail"
         android:clickable="true"

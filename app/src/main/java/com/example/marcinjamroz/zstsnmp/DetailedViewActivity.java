@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+
 public class DetailedViewActivity extends AppCompatActivity {
 
 
@@ -36,7 +40,14 @@ public class DetailedViewActivity extends AppCompatActivity {
         viewGroup.addView(oid);
         viewGroup.addView(description);
 
-
+        try {
+            Socket socket = new Socket("10.78.17.22",5555);
+            DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
+            dataOutputStream.writeUTF(getResources().getString(oidID));
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
