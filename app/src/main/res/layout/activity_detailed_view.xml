@@ -5,6 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.marcinjamroz.zstsnmp.DetailedViewActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
+
+
+    <Button
+        android:id="@+id/get_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GET"
+        android:onClick="getOID"
+        android:gravity="center"
+       />
+
 
 </LinearLayout>
