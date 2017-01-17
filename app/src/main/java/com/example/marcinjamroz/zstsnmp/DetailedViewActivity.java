@@ -13,13 +13,22 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintStream;
 import java.net.Socket;
 
 public class DetailedViewActivity extends AppCompatActivity {
 
     int oidID;
+    String[] response;
+    Socket socket;
 
 
     @Override
@@ -50,6 +59,8 @@ public class DetailedViewActivity extends AppCompatActivity {
         viewGroup.addView(oid);
         viewGroup.addView(description);
 
+        socket = MainActivity.SocketHandler.getSocket();
+
 
 
     }
@@ -66,18 +77,44 @@ public class DetailedViewActivity extends AppCompatActivity {
         protected Void doInBackground(Integer... params) {
 
             try {
-                Socket socket = new Socket("192.168.43.48",8888);
+
                 DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
-                dataOutputStream.writeUTF(getResources().getString(params[0]));
-                socket.close();
+               // dataOutputStream.writeUTF(getResources().getString(params[0]));
+              //  socket.close();
+
+           //     BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            //    PrintStream output = new PrintStream(socket.getOutputStream());
+                String oidToSend = getResources().getString(params[0]).split("=")[1];
+
+             //   bufferedWriter.write("CONNECT");
+              //  bufferedWriter.write("GET " + oidToSend);
+
+                dataOutputStream.writeUTF("GET " + oidToSend);
+
+                ObjectInputStream objectInput = new ObjectInputStream(socket.getInputStream());
+                response = (String[]) objectInput.readObject();
+
+
+
             } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
 
             return null;
         }
 
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
 
+            Intent intent = new Intent(getApplicationContext(),ResponseActivity.class);
+            intent.putExtra("response",response);
+            startActivity(intent);
+
+        }
     }
 
 

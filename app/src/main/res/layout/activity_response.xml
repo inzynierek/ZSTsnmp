@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_response"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1"
+    tools:context="com.example.marcinjamroz.zstsnmp.ResponseActivity">
+
+    <TableRow>
+        <TextView
+            android:text="Name/OID"/>
+        <TextView
+            android:id="@+id/oid"
+            android:text="nic"
+            android:gravity="right"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Value"/>
+        <TextView
+            android:id="@+id/value"
+            android:text="nic"
+            android:gravity="right"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Type"/>
+        <TextView
+            android:id="@+id/type"
+            android:text="nic"
+android:gravity="right"      />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="IP:Port"/>
+        <TextView
+            android:id="@+id/ip"
+            android:text="nic"
+            android:gravity="right"/>
+    </TableRow>
+
+</TableLayout>
