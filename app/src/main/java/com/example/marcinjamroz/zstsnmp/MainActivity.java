@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewFlipper = (ViewFlipper)findViewById(R.id.flipper);
+        viewFlipper.showNext();
 
         connect = (Button)findViewById(R.id.connectButton);
         connect.setOnClickListener(new View.OnClickListener() {

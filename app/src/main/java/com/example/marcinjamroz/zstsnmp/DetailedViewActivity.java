@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.support.annotation.StringDef;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,7 @@ public class DetailedViewActivity extends AppCompatActivity {
 
         TextView oid = new TextView(this);
         TextView description = new TextView(this);
+        description.setMovementMethod(new ScrollingMovementMethod());
 
          oidID = this.getResources().getIdentifier(value+"OID","string",this.getPackageName());
         int descriptionID = this.getResources().getIdentifier(value+"Description","string",this.getPackageName());

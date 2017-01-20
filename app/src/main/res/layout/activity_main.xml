@@ -49,12 +49,13 @@
                 android:textSize="25sp"
                 android:onClick="displayDetail"
                 android:clickable="true"
+
                 />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_gravity="center"
@@ -65,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:text="Serwer IP"
                 android:textSize="25sp"
+                android:layout_gravity="center"
             />
 
             <EditText
@@ -73,13 +75,17 @@
                 android:layout_height="wrap_content"
                 android:hint="serwer IP"
                 android:inputType="number"
-                android:digits="0123456789."/>
+                android:digits="0123456789."
+                android:layout_gravity="center"
+                />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Serwer port"
-                android:textSize="25sp"/>
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                />
 
             <EditText
                 android:id="@+id/serwerPort"
@@ -87,14 +93,18 @@
                 android:layout_height="wrap_content"
                 android:hint="Serwer port"
                 android:inputType="number"
+                android:layout_gravity="center"
+
                 />
 
             <Button
                 android:id="@+id/connectButton"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Connect"
-            />
+                android:layout_gravity="center"
+
+                />
         </LinearLayout>
 
 
