@@ -42,6 +42,7 @@ public class DetailedViewActivity extends AppCompatActivity {
 
         setTitle(value);
 
+
         TextView oid = new TextView(this);
         TextView description = new TextView(this);
 
@@ -79,16 +80,8 @@ public class DetailedViewActivity extends AppCompatActivity {
             try {
 
                 DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
-               // dataOutputStream.writeUTF(getResources().getString(params[0]));
-              //  socket.close();
-
-           //     BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            //    PrintStream output = new PrintStream(socket.getOutputStream());
                 String oidToSend = getResources().getString(params[0]).split("=")[1];
 
-             //   bufferedWriter.write("CONNECT");
-              //  bufferedWriter.write("GET " + oidToSend);
 
                 dataOutputStream.writeUTF("GET " + oidToSend);
 

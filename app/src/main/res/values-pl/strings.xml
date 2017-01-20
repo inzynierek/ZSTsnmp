@@ -15,4 +15,19 @@ re-initialized.</string>
     <string name="sysContactDescription">Description: The textual identification of the contact person
 for this managed node, together with information
 on how to contact this person.</string>
+
+    <string name="ipForwarding">ipForwarding</string>
+    <string name="ipForwardingOID">OID=.1.3.6.1.2.1.4.1.0</string>
+    <string name="ipForwardingDescription">The indication of whether this entity is acting
+as an IP gateway in respect to the forwarding of
+datagrams received by, but not addressed to, this
+entity.  IP gateways forward datagrams.  IP hosts
+do not (except those source-routed via the host).
+Note that for some managed nodes, this object may
+take on only a subset of the values possible.
+Accordingly, it is appropriate for an agent to
+return a badValue response if a management
+station attempts to change this object to an
+inappropriate value.</string>
+
 </resources>

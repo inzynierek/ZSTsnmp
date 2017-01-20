@@ -4,29 +4,102 @@
     xmlns:tools = "http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
-    <TextView
-        android:id="@+id/sysUpTime"
-        android:background="#1f000000"
+    <ViewFlipper
+        android:id="@+id/flipper"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sysUpTime"
-        android:textSize="25sp"
-        android:onClick="displayDetail"
-        android:clickable="true"
-        />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/sysContact"
-        android:background="#d74424"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sysContact"
-        android:textSize="25sp"
-        android:onClick="displayDetail"
-        android:clickable="true"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/sysUpTime"
+                android:background="#1f000000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sysUpTime"
+                android:textSize="25sp"
+                android:onClick="displayDetail"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:id="@+id/sysContact"
+                android:background="#d74424"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sysContact"
+                android:textSize="25sp"
+                android:onClick="displayDetail"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:id="@+id/ipForwarding"
+                android:background="#1f000000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ipForwarding"
+                android:textSize="25sp"
+                android:onClick="displayDetail"
+                android:clickable="true"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Serwer IP"
+                android:textSize="25sp"
+            />
+
+            <EditText
+                android:id="@+id/serwerIP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="serwer IP"
+                android:inputType="number"
+                android:digits="0123456789."/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Serwer port"
+                android:textSize="25sp"/>
+
+            <EditText
+                android:id="@+id/serwerPort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Serwer port"
+                android:inputType="number"
+                />
+
+            <Button
+                android:id="@+id/connectButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Connect"
+            />
+        </LinearLayout>
+
+
+    </ViewFlipper>
+
 
 </LinearLayout>
 
